@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./store.css" />
+    <title>DevStore</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+    </style>
+</head>
+<body>
+    <div class="Box-Site"> 
+        <div class="left-box">
+            <header class="header-left-box">
+                <div class="svg-cabecalho-left-box"> <img src="../assets/images/raposa.png" /></div>
+                <div class="devSchool"> <span>Dev</span>Store</div>
+            </header>
+            <div class="black-box"></div>
+            <div class="left-box-management">
+                <div> Gerenciamento </div>
+                <img src="../assets/images/seta.png" />
+            </div>
+            <div class="left-box-aluno">
+                <div> Produtos </div>
+            </div> 
+        </div>
+    
+          <div class="right-box"> 
+            <div class="reader-right-box">
+               <div class = "box-user"> 
+                 <div class="user-image">  <img src="../assets/images/brunex.png" alt = ""> <div class="absolute">  3   </div> </img> </div>
+                 
+                 <div class="user-name"> Olá, <b>  Bruno de Oliveira </b> </div>
+                </div>
+                <div class="box-image">
+                    <div class="refresh-button"> <button> <img src="../assets/images/carregar.png" alt = "" />  </button> </div>
+                    <div class="left-button"> <button> <img src="../assets/images/sair.png" alt = "" />  </button> </div>
+                </div>
+            </div>
+            <div class="bottom-bar-right-header"> </div>
+          
+            <div class="body-right-box">
+                <div class="new-student-box">
+                    <div class="text-new-student">
+                        <div class="bar-new-student"></div>
+                        <div class="text-new-student">Novo Produto</div>
+                    </div>
+                    <div class="input-new-student"> 
+                        <div class="input-left">
+                            <div class="agp-input"> 
+                                
+                                <div class="name-student"> Nome: </div>  
+                                <div class="input, input2"> <input /> </div>  
+                            </div> 
+                            <div class="agp-input">
+                                <div class="number-student"> Categoria: </div>  
+                                <div class="input"> <input /> </div> 
+                            </div>
+                            <div class="avaliacao">
+                                <div class="ava1"> Avaliação: </div>
+                                <div class="ava2">  <input /> </div>                                
+                            </div>
+                        </div>
+                        <div class="input-right">
+                            <div class="agp-input">
+                                <div class="corse-student"> Preço DE: </div>  
+                                <div class="input"> <input /> </div>  
+                            </div>
+                            <div class="agp-input">
+                                <div class="class-student"> Preço POR: </div>  
+                                <div class="input"> <input /> </div> 
+                            </div>
+                            <div class="estoque">
+                                <div class="est1"> Estoque: </div>
+                                <div class="est2"> <input /> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imagem">
+                        <div class="img1"> Link Imagem: </div>
+                        <div class="img2"> <input /> </div>
+                    </div>
+                    <div class="descricao">
+                        <div class="desc1"> Descricao: </div>
+                        <div class="desc2"> <textarea></textarea></div>
+                        <div class="button-create"> <button> Cadastrar </button> </div>
+                    </div>
+                </div>
+    
+                <div class="student-registered-box">
+                    <div class="row-bar"> 
+                        <div class= "bar-new-student"> </div>
+                        <div class="text-registered-student"> Produtos Cadastrados </div>
+                    </div>
+                
+                    <table class ="table-user">
+                        <thead>
+                            <tr>
+                                <th class="a"> </th>
+                                <th > ID </th>
+                                <th> Produto </th>
+                                <th> Categoria </th>
+                                <th> Preço </th>
+                                <th> Estoque </th>
+                                <th class="a"> </th>
+                                <th class="a"> </th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <tr >
+                                <td class="fotinha"> <img src="https://d3pt1seq4txask.cloudfront.net/Custom/Content/Products/01/01/0101_refrigerante-coca-cola-lata-350ml-14_m6_637417305699974110.jpg" alt="" /></td>
+                                <td> 1 </td>
+                                <td> Coquinha Gelada</td>
+                                <td> Refri </td>
+                                <td> R$ 5,00 </td>
+                                <td > 100 </td>
+                                <td class="aa"> <button> <img src="../assets/images/editar.svg" alt="" /> </button> </td>
+                                <td class = "aa">   <button> <img src="../assets/images/remover.svg" alt="" /> </button> </td>
+                            </tr>   
+                        
+                            <tr class="int">
+                                <td class="fotinha"> <img src="https://d3pt1seq4txask.cloudfront.net/Custom/Content/Products/01/01/0101_refrigerante-coca-cola-lata-350ml-14_m6_637417305699974110.jpg" alt="" /></td>
+                                <td> 2 </td>
+                                <td> Coquinha Gelada</td>
+                                <td> Refri </td>
+                                <td> R$ 5,00 </td>
+                                <td > 100 </td>
+                                <td>   </td>
+                                <td>   </td>
+                            </tr>
+
+                            <tr>
+                                <td class="fotinha"> <img src="https://d3pt1seq4txask.cloudfront.net/Custom/Content/Products/01/01/0101_refrigerante-coca-cola-lata-350ml-14_m6_637417305699974110.jpg" alt="" /></td>
+                                <td> 3 </td>
+                                <td> Coquinha Gelada</td>
+                                <td> Refri </td>
+                                <td>  R$ 5,00 </td>
+                                <td > 100 </td>
+                                <td>   </td>
+                                <td>   </td>
+                            </tr>
+
+                            <tr class="int">
+                                <td class="fotinha"> <img src="https://d3pt1seq4txask.cloudfront.net/Custom/Content/Products/01/01/0101_refrigerante-coca-cola-lata-350ml-14_m6_637417305699974110.jpg" alt="" /></td>
+                                <td> 4 </td>
+                                <td> Coquinha Gelada</td>
+                                <td> Refri </td>
+                                <td> R$ 5,00 </td>
+                                <td> 100 </td>
+                                <td>   </td>
+                                <td>   </td>
+                            </tr>    
+                        </tbody> 
+                    </table>            
+                </div>
+            </div>
+        </div>
+      </div>    
+</body>
+</html>
