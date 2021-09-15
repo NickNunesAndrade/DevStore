@@ -26,7 +26,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
 
-        font-size: 32px;
+        font-size: 20px;
     }
 
     .text-new-student div {
@@ -310,6 +310,120 @@ const Container = styled.div`
         border-radius: 50%;
         height: 57px;
     }
+
+    .avaliacao {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .ava1 {
+        font-size: 18px;
+        color: #615858;
+        width: 5.5em;
+        font-weight: 800;
+        margin-left: 0.9em;
+    }
+
+    .ava2 {
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+    .estoque {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .est1 {
+        font-size: 18px;
+        color: #615858;
+        width: 5.5em;
+        font-weight: 800;
+        margin-left: 1.2em;
+        margin-right: -0.8em;
+    }
+
+    .est2 {
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+    .imagem {
+        display: flex;
+        flex-direction: row;
+    }   
+
+    .img1 {
+        font-size: 18px;
+        color: #615858;
+        width: 7.5em;
+        height: 1.5em;
+        font-weight: 800;
+        margin-left: -0.5em;
+        margin-top: -0.2em;
+    
+    }
+
+    .img2 {
+        margin-bottom: .5em;
+        margin-top: -0.7em;
+        margin-left: -0.6em;
+    }
+
+    .img2 input {
+        padding-right: 42.2em;
+    }
+
+    .input2 {
+        margin-left: -0.7em;
+        margin-bottom: .5em;
+    }
+
+    .descricao {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .desc1 {
+        font-size: 18px;
+        color: #615858;
+        width: 5.5em;
+        font-weight: 800;
+        margin-left: 0.8em;
+        margin-left: 1em;
+        margin-top: 0.8em;
+    }
+
+    .desc2 {
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+    textarea {
+        border: none;
+        border: 1px solid #A8A8A8;
+        border-radius: 4px;
+        padding-right: 30.8em;
+        padding-bottom: 100px;
+    }
+
+    .fotinha img {
+        height: 45px;
+        width: 45px;
+    }
+
+    .aa > button {
+        visibility: hidden;
+    }
+
+    tr:hover {
+        .aa > button {
+            visibility: visible;
+        }
+    }
+
 `
 
 const Conteudo = styled.div`

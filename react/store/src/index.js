@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
 import './index.css'
 
-import Store from './routes.JS'
+import Store from './routes.js';
 
 
 ReactDOM.render(
@@ -11,6 +11,4 @@ ReactDOM.render(
     <Store />
   </React.StrictMode>, 
   document.getElementById('root')
-)
-
-
+);

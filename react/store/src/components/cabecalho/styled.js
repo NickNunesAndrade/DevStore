@@ -11,11 +11,14 @@ const Container = styled.div`
     }
 
     .user-name  {
+        display: flex;
+        flex-direction: row;
         padding-left: 1em;
         font-size: 16px;
     }
 
     .user-name b {
+        width: 10em;
         color: #4a4a4a;
     }
 
@@ -44,6 +47,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         padding: 0.5em;
+        margin-left: 520px;
     }
 
     .box-user {
