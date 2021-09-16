@@ -9,7 +9,6 @@ input, button {
 
 * {
     box-sizing: border-box;
-    cursor: default;
     font-family: 'Roboto';
 }
 
@@ -535,7 +534,8 @@ img {
 }
 
 .img2 input {
-    padding-right: 42.2em;
+    width: 43em;
+
 }
 
 .input2 {

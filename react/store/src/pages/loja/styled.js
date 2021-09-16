@@ -373,7 +373,7 @@ const Container = styled.div`
     }
 
     .img2 input {
-        padding-right: 42.2em;
+        width: 43em;
     }
 
     .input2 {

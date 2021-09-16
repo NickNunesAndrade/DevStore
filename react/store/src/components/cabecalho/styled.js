@@ -47,7 +47,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         padding: 0.5em;
-        margin-left: 520px;
+        margin-left: 200px;
     }
 
     .box-user {
