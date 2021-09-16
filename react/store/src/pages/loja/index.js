@@ -1,8 +1,13 @@
 import Cabecalho from '../../components/cabecalho/index.js';
 import Menu from '../../components/menu/index.js';
 import {Container, Conteudo, } from './styled.js';
+import { useState, useEffect, useRef } from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar';
 import Api from '../services/api';
-import { useState, useEffect } from 'react';
 const api = new Api();
 
 export default function Index() {
@@ -16,40 +21,70 @@ export default function Index() {
     const [descricao, setDescricao] = useState('');
     const [imgProduto, setImgProduto] = useState('');
     const [idAltera, setIdAltera] = useState(0);
+    let loading = useRef(null);
 
     async function listar() {
+        loading.current.continuousStart();
+
         let lista = await api.listar();
         setLoja(lista);
+
+        loading.current.complete();
     }
 
     async function inserir() {
+        loading.current.continuousStart();
+
         if(idAltera === 0) {
             let r = await api.adicionar(nome, categoria, avaliacao, precoDe, precoPor, estoque, imgProduto, descricao);
             if(r.erro) 
-                alert(r.erro);
-            else 
-                alert('Produto Inserido!!');
-        
+                    toast.error(r.erro);
+            else {
+                    toast.dark('Produto Inserido !!');
+                }
         } else {
             let r = await api.editar(idAltera, nome, categoria, avaliacao, precoDe, precoPor, estoque, imgProduto, descricao);
             if(r.erro) 
-                alert(r.erro);
-            else 
-                alert('Produto Alterado!!');
-            
+                    toast.error(r.erro);
+            else {
+                    toast.dark('Produto Alterado !!');
+            }
         }
         limparCampos();
         listar();
+
+        loading.current.complete();
     }
 
-    async function remover(id) {
-        let r = await api.remover(id);
-        alert('Produto removido !!');
-
-        listar();
+    function remover(id) {
+        loading.current.continuousStart();
+        confirmAlert({
+            title: 'Remover Aluno',
+            message: `Tem certeza que deseja remover o produto ${id}`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        let r = await api.remover(id);
+                        if(r.erro)
+                            toast.error(r.erro);
+                        else {
+                            toast.dark('Produto removido !!');
+                            listar();
+                        }
+                    }
+                },
+                {
+                    label: 'Nao'
+                }
+            ]
+        });
+        loading.current.complete();
     }
 
     async function edita(loj) {
+        loading.current.continuousStart();
+
         setNome(loj.nm_produto);
         setCategoria(loj.ds_categoria);
         setAvaliacao(loj.vl_avaliacao);
@@ -59,6 +94,8 @@ export default function Index() {
         setDescricao(loj.ds_produto);
         setImgProduto(loj.img_produto);
         setIdAltera(loj.id_produto);
+
+        loading.current.complete();
     }
 
     function limparCampos() {
@@ -74,11 +111,18 @@ export default function Index() {
     }
 
     useEffect(() => {
+        loading.current.continuousStart();
+
         listar();
+
+        loading.current.complete();
     }, []);
 
     return (
         <Container>
+            <LoadingBar color="#01e9ff" height={6} ref={loading} />
+            <ToastContainer />
+
             <Menu /> 
             <Conteudo>
                 <Cabecalho />
@@ -162,7 +206,7 @@ export default function Index() {
                                                 : loj.nm_produto} 
                                     </td> 
                                     <td> {loj.ds_categoria} </td>
-                                    <td> {loj.vl_preco_de} </td>
+                                    <td> {loj.vl_preco_por} </td>
                                     <td > {loj.qtd_estoque} </td>
                                     <td className="aa"> <button onClick={() => edita(loj)} > <img src="../assets/images/editar.svg" alt="" /> </button> </td>
                                     <td className= "aa"><button onClick={() => remover(loj.id_produto)}><img src="../assets/images/remover.svg" alt=""/></button></td>

@@ -11,7 +11,14 @@ export default class Api {
     
     async adicionar(nome, categoria, avaliacao, precoDe, precoPor, estoque, imgProduto, descricao ) {
         let r = await api.post('/produto', {nome, categoria, avaliacao, precoDe, precoPor, estoque, imgProduto, descricao});
-        return r.data;
+        
+        if( nome === "" || categoria === "" || avaliacao === "" || precoDe === "" || precoPor === "" || estoque === "" || imgProduto === "" || descricao === "") {
+            return "Tem algum campo nulo !!";
+        } else if( avaliacao <= 0 || precoDe <= 0 || precoPor <= 0 || estoque <= 0 ) {
+            return "Alguns campos nao pode ter numeros negativos";
+        } else {
+            return r.data;
+        }
     }
 
     async editar(id, nome, categoria, avaliacao, precoDe, precoPor, estoque, imgProduto, descricao ) {
