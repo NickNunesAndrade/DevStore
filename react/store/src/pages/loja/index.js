@@ -40,14 +40,14 @@ export default function Index() {
             if(r.erro) 
                     toast.error(r.erro);
             else {
-                    toast.dark('Produto Inserido !!');
+                    toast.dark('💕 Produto Inserido !!');
                 }
         } else {
             let r = await api.editar(idAltera, nome, categoria, avaliacao, precoDe, precoPor, estoque, imgProduto, descricao);
             if(r.erro) 
                     toast.error(r.erro);
             else {
-                    toast.dark('Produto Alterado !!');
+                    toast.dark(' 💕 Produto Alterado !!');
             }
         }
         limparCampos();
@@ -69,7 +69,7 @@ export default function Index() {
                         if(r.erro)
                             toast.error(r.erro);
                         else {
-                            toast.dark('Produto removido !!');
+                            toast.dark(' 💕 Produto removido !!');
                             listar();
                         }
                     }
